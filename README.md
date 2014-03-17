@@ -40,4 +40,3 @@ I may not file will be overwritten .
     / / I use normally after .
     _loader.contentLoaderInfo.addEventListener (Event.COMPLETE, _onComplete);
     _loader.load (new URLRequest ("https://www.google.co.jp/images/srpr/logo11w.png"));
-    Google Translate for Business:Translator ToolkitWebsite TranslatorGlobal Market Finder
