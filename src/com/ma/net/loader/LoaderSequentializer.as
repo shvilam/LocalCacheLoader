@@ -25,10 +25,8 @@
 package com.ma.net.loader{
 	
 	import flash.display.Loader;
-	import flash.display.LoaderInfo;
 	import flash.events.Event;
 	import flash.events.EventDispatcher;
-	import flash.events.IEventDispatcher;
 	import flash.events.IOErrorEvent;
 	import flash.events.SecurityErrorEvent;
 	import flash.events.TimerEvent;
@@ -38,7 +36,7 @@ package com.ma.net.loader{
 	import flash.utils.Timer;
 	
 	/**
-	 * Loader を登録することで, リクエストを順番に発行し読み込みを最適化してくれるクラスです.
+	 * By registering Loader, is a class that will optimize the read issues in order request.
 	 * @author sgmnt.org
 	 */
 	public class LoaderSequentializer extends EventDispatcher{
@@ -84,8 +82,8 @@ package com.ma.net.loader{
 		public function get running():Boolean{ return _running; }
 		
 		/**
-		 * 読み込みを開始します.
-		 * loader を作成するのではなく、引数で渡す理由は LocalCacheLoader を用いた時に context の指定が煩雑になるため.
+		 * I will start reading. 
+		 * Reason as opposed to creating a loader, passed in argument for the specified context is complicated when using the LocalCacheLoader. 
 		 * @param request
 		 * @param context
 		 * @param complete
