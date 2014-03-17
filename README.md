@@ -1,5 +1,6 @@
 Fork from https://github.com/sgmnt/LocalCacheLoader
-Main resone for forking is translte to english 
+
+Main resone for forking is translate to english 
 
 LocalCacheLoader of fully compatible with Loader / URLLoader.
 
