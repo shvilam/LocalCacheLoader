@@ -1,3 +1,5 @@
+Fork from https://github.com/sgmnt/LocalCacheLoader
+
 LocalCacheLoader of fully compatible with Loader / URLLoader
 Is read for class .
 
