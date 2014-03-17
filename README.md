@@ -1,48 +1,43 @@
-LocalCacheLoader
-================
+LocalCacheLoader of fully compatible with Loader / URLLoader
+Is read for class .
 
-LocalCacheLoader は Loader/URLLoaderと完全互換の
-読み込み用クラスです。
+By using this class , the data of the image or text that is read
+Save once locally , if a file of the same already exists
+I will use that file .
 
-このクラスを利用すると、読み込んだ画像やテキストのデータを
-ローカルに一度保存し、同様のファイルが既に存在する場合には
-そのファイルを使うようになります。
+As a result , you can eliminate unnecessary communication of the same file .
+The usage is exactly the same as Loader / URLLoader normal .
 
-これにより、同一ファイルの無駄な通信をなくす事が出来ます。
-使い方は通常の Loader/URLLoader と全く同じです。
+Point of difference is that the initialization process requires some prior to use .
+It is that it is necessary to use a Factory class dedicated to the generation of class .
 
-違う点は、使用前にいくつか初期化プロセスが必要な事。
-クラスの生成に専用のFactory クラスを用いる必要がある事です。
+It is also available on AIR for Android / AIR for iOS.
 
-AIR for Android / AIR for iOS でも利用可能です。
+# # How to use
 
-## 使い方
+While it is easy to understand it 's get a look at the sample / main.as
+It is used first initialize something like the following .
+For us to save on local without permission is after .
 
-sample/main.as を見てもらうのがわかりやすいですが
-以下のような感じで初期化してから使います。
-後は勝手にローカルに保存してくれます。
+So keep that uniquely file based on the URL, unless it is the same URL completely
+I may not file will be overwritten .
 
-URL を元にファイルを一意に保つので、完全に同一のURLでない限り
-ファイルが上書きされる事もありません。
+    / / Setup cache Directory.
+    / / Can be cached in the directory that you specify here .
+    LocalCacheSettings.WORKING_DIRECTORY = File.applicationDirectory;
+    
+    / / Please set the following: If AIR for Android, the AIR for iOS.
+    / / LocalCacheSettings.WORKING_DIRECTORY = File.applicationStorageDirectory;
 
-    // Setup cache Directory.
-    // ここで指定したディレクトリにキャッシュされます.
-    LocalCacheSettings.WORKING_DIRECTORY = File.applicationDirectory;
-    
-    // AIR for Android, AIR for iOS の場合は以下を設定してください.
-    //LocalCacheSettings.WORKING_DIRECTORY = File.applicationStorageDirectory;
-	  
-  	// init Factory Class.
-  	// ファクトリクラスを初期化しなかった場合は 通常の Loader 等が使われます。
-  	NetClassFactory.initialize( LocalCacheLoader, LocalCacheURLLoader, LocalCacheNetStream );
-	  
-  	// Create Class.
-	  // ここの第二引数を true にすると、ローカルに保存されたキャッシュの有る無しを問わず
-	  // 必ずWeb上からファイルをとるようになります。
-	  _loader = NetClassFactory.createLoader( null, false );
-	  // 後は普通に使います。
-    _loader.contentLoaderInfo.addEventListener( Event.COMPLETE, _onComplete );
-	  _loader.load( new URLRequest("https://www.google.co.jp/images/srpr/logo11w.png") );
-    
-    
+  / / Init Factory Class.
+  / / Loader like normal will be used if you do not initialize the factory class .
+  NetClassFactory.initialize (LocalCacheLoader, LocalCacheURLLoader, LocalCacheNetStream);
 
+  / / Create Class.
+/ / If true the second argument here , regardless of there without a cache that is stored in the local
+/ / I will take the file from the Web always on .
+_loader = NetClassFactory.createLoader (null, false);
+/ / I use normally after .
+    _loader.contentLoaderInfo.addEventListener (Event.COMPLETE, _onComplete);
+_loader.load (new URLRequest ("https://www.google.co.jp/images/srpr/logo11w.png"));
+Google Translate for Business:Translator ToolkitWebsite TranslatorGlobal Market Finder
