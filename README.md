@@ -1,7 +1,8 @@
 Fork from https://github.com/sgmnt/LocalCacheLoader
+Main resone for forking is translte to english 
 
-LocalCacheLoader of fully compatible with Loader / URLLoader
-Is read for class .
+LocalCacheLoader of fully compatible with Loader / URLLoader.
+
 
 By using this class , the data of the image or text that is read
 Save once locally , if a file of the same already exists
