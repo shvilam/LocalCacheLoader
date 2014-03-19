@@ -118,10 +118,10 @@ package com.ma.net.loader{
 			
 		}
 		
-		/**
-		 * 読み込みキューを削除します.
-		 * @param loader
-		 */		
+		/** 
+		* I remove the read queue. 
+		* @ Param loader 
+		*/
 		public function removeLoaderQueue( loader:Loader ):void{
 			
 			for( var i:int = 0, len:int = _loaderVec.length; i < len; i++ ){
@@ -163,9 +163,9 @@ package com.ma.net.loader{
 			
 		}
 		
-		/**
-		 * 通信中の処理を切断します.
-		 */
+		/** 
+		* I will cut the processing of communication. 
+		*/
 		public function close():void{
 			if( _loader != null ){
 				try{
@@ -180,7 +180,7 @@ package com.ma.net.loader{
 		
 		protected function _load():void{
 			
-			// 既に読み込み処理中の場合は読み込む.
+			// I read in the case of reading already in progress.
 			if( _running == true ){
 				return;
 			}
@@ -201,11 +201,10 @@ package com.ma.net.loader{
 			_loader.load( _requestDict[_loader] as URLRequest, _contextDict[_loader] as LoaderContext );
 			_running = true;
 		}
-		
-		/**
-		 * 読み込み完了,失敗,セキュリティエラーに関わらず次の読み込みを行う.
-		 * @param event
-		 */
+		/** 
+		* I do read the following, regardless of read completion, failure, the security error. 
+		* @ Param event 
+		*/
 		protected function _onComplete( event:Event ):void{
 			removeLoaderQueue( _loaderDict[event.target] );
 		}

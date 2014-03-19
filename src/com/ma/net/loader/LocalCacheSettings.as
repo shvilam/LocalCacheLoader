@@ -32,7 +32,7 @@ package com.ma.net.loader
 	import flash.utils.escapeMultiByte;
 	
 	/**
-	 * LocalCache 系のプログラムの設定を保持します.
+	* I will hold the program settings LocalCache system.
 	 * @author kawakita
 	 */	
 	public class LocalCacheSettings
@@ -47,7 +47,7 @@ package com.ma.net.loader
 		// ------- PUBLIC STATIC ----------------------------------------------------------
 		
 		/**
-		 * 保存されるローカルパスを取得します.
+		 * I get the local path to be saved.
 		 * @param urlRequest
 		 * @return 
 		 */		
@@ -55,7 +55,7 @@ package com.ma.net.loader
 			var f:File;
 			var url:String = request.url;
 			if( url.indexOf("http") == 0 ){
-				// http リクエストの場合キャッシュディレクトリを調べる.
+				// I check the cache directory if the http request.
 				url = LocalCacheSettings.encode(url);
 				f   = new File( _WORKING_DIRECTORY.resolvePath( url.substring( url.indexOf("://") + 3, url.length ) ).nativePath );
 			}else{
@@ -73,7 +73,7 @@ package com.ma.net.loader
 		}
 		
 		/**
-		 * キャッシュを保存するディレクトリ.
+		 * Directory in which to save the cache.
 		 * @return 
 		 */		
 		public static function get WORKING_DIRECTORY():File
@@ -105,7 +105,7 @@ package com.ma.net.loader
 		}
 		
 		/**
-		 * 初回の読み込みであるかを調べるための辞書.
+		 * Dictionary to determine whether the read first.
 		 * @return 
 		 */
 		internal static function get FIRST_TIME_DICTIONRY():Dictionary

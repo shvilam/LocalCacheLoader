@@ -31,8 +31,8 @@ package com.ma.net.loader{
 	import flash.net.URLLoader;
 	
 	/**
-	 * Loader, URLLoader 等の Loader 関連クラスを生成するための Factory クラス.
-	 * initialize で Loader と URLLoader を継承したクラスを渡しておくと,そのクラスを使うようになる.
+	 * Factory class for generating related class Loader Loader, URLLoader of such. 
+     * If you leave pass a class that extends URLLoader and Loader in initialize, it becomes use that class.
 	 * @author sgmnt.org
 	 */
 	public class NetClassFactory{
@@ -48,7 +48,7 @@ package com.ma.net.loader{
 		public function NetClassFactory(pvt:PrivateClass){}
 		
 		/**
-		 * 初期化処理.
+		 * Initialization process. 
 		 * @param loaderClass
 		 * @param urlLoaderClass
 		 * @param netStreamClass
@@ -60,8 +60,8 @@ package com.ma.net.loader{
 		}
 		
 		/**
-		 * Loader インスタンスを生成します.
-		 * @param context
+		 * I will generate a Loader instance.
+ 		 * @param context
 		 * @param loadLocalFileFirst
 		 * @return 
 		 */
@@ -73,7 +73,7 @@ package com.ma.net.loader{
 		}
 		
 		/**
-		 * URLLoader インスタンスを生成します.
+		 * I will generate a URLLoader instance.
 		 * @param context
 		 * @param loadRemoteFileFirst
 		 * @return 
@@ -86,7 +86,7 @@ package com.ma.net.loader{
 		}
 		
 		/**
-		 * NetStream インスタンスを生成します.
+		  * I will generate a NetStream instance.
 		 * @param connection
 		 * @param context
 		 * @param loadLocalFileFirst
