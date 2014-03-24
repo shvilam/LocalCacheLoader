@@ -1,6 +1,6 @@
-Fork from https://github.com/sgmnt/LocalCacheLoader
 
-Main resone for forking is translate to english 
+
+Main reason for forking is translated the code and docs to english 
 
 LocalCacheLoader of fully compatible with Loader / URLLoader.
 
@@ -44,3 +44,6 @@ I may not file will be overwritten .
     / / I use normally after .
     _loader.contentLoaderInfo.addEventListener (Event.COMPLETE, _onComplete);
     _loader.load (new URLRequest ("https://www.google.co.jp/images/srpr/logo11w.png"));
+
+
+Fork from https://github.com/sgmnt/LocalCacheLoader
