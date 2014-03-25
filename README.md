@@ -1,25 +1,27 @@
 
-
 Main reason for forking is translated the code and docs to english 
 
-LocalCacheLoader of fully compatible with Loader / URLLoader.
+LocalCacheLoader is library fully compatible with Loader / URLLoader/ NetStream and it try to replace a very light weight version of the brower cashe.
 
 
-By using this class , the data of the image or text that is read
-Save once locally , if a file of the same already exists
-I will use that file .
+By using this class , the data of images text  and video will be fetch from server once
+locally , and then when every it will be request again we will recheck the local file system first and local file will be use. 
 
-As a result , you can eliminate unnecessary communication of the same file .
-The usage is exactly the same as Loader / URLLoader normal .
 
-Point of difference is that the initialization process requires some prior to use .
-It is that it is necessary to use a Factory class dedicated to the generation of class .
+As a result , you can eliminate unnecessary communication to the server by requesting the same file over and over agin.
+The usage is exactly the same as Loader / URLLoader /NetStream.
 
-It is also available on AIR for Android / AIR for iOS.
+The main difference is that the initialization process that requires 2 Lines of code.
+1. the fist is spesfied the application the main cache directory.
+2. is passing the  LocalCacheLoader, LocalCacheURLLoader, LocalCacheNetStream.
+3. Using the factory to create instances for thous classes. 
+
+p.s 
+Tt is obligatory to use a Factory class to generate the local loader classes.
 
 # # How to use
 
-While it is easy to understand it 's get a look at the sample / main.as
+Lest look at an example even that it is quite easy to understand. File is in  sample/main.as
 It is used first initialize something like the following .
 For us to save on local without permission is after .
 
