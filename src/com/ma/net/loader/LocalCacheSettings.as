@@ -78,6 +78,10 @@ package com.ma.net.loader
 		 */		
 		public static function get WORKING_DIRECTORY():File
 		{
+			if(_WORKING_DIRECTORY == null)
+			{
+				_WORKING_DIRECTORY = File.applicationStorageDirectory;
+			}
 			return _WORKING_DIRECTORY;
 		}
 		public static function set WORKING_DIRECTORY(value:File):void
