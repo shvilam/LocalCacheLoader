@@ -1,4 +1,4 @@
-Main reason for forking is translated the code and docs to english 
+
 
 LocalCacheLoader is library fully compatible with Loader / URLLoader/ NetStream and it try to replace a very light weight version of the brower cashe.
 
@@ -53,3 +53,4 @@ I may not file will be overwritten .
 
 
 Fork from https://github.com/sgmnt/LocalCacheLoader
+It has been fork mailly for translation resone (from japanis)
