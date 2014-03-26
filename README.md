@@ -18,7 +18,7 @@ The main difference is that the initialization process that requires 2 Lines of 
     Help is needed!
     
     Help is needed for the NetStream loader it doesnt have the optimal soltion it first save the file to local disc 
-    and then play. it will be perfect if i could baffer the stream and in end create file out of it.
+    and then play. it will be perfect if it could baffer the stream and in end create file out of it.
 
 p.s 
 Tt is obligatory to use a Factory class to generate the local loader classes.
