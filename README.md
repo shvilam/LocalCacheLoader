@@ -1,4 +1,3 @@
-
 Main reason for forking is translated the code and docs to english 
 
 LocalCacheLoader is library fully compatible with Loader / URLLoader/ NetStream and it try to replace a very light weight version of the brower cashe.
@@ -15,6 +14,11 @@ The main difference is that the initialization process that requires 2 Lines of 
 1. the fist is spesfied the application the main cache directory.
 2. is passing the  LocalCacheLoader, LocalCacheURLLoader, LocalCacheNetStream.
 3. Using the factory to create instances for thous classes. 
+
+    Help is needed!
+    
+    Help is needed for the NetStream loader it doesnt have the optimal soltion it first save the file to local disc 
+    and then play. it will be perfect if i could baffer the stream and in end create file out of it.
 
 p.s 
 Tt is obligatory to use a Factory class to generate the local loader classes.
