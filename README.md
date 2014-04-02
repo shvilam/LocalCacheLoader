@@ -1,4 +1,3 @@
-
 LocalCacheLoader is library fully compatible with Loader / URLLoader/ NetStream and it try to replace a very light weight version of the brower cashe.
 
 
@@ -9,10 +8,10 @@ locally , and then when every it will be request again we will recheck the local
 As a result , you can eliminate unnecessary communication to the server by requesting the same file over and over agin.
 The usage is exactly the same as Loader / URLLoader /NetStream.
 
-The main difference is that the initialization process that requires 3 Lines of code.
-    1. the fist is spesfied the application the main cache directory.
-    2. is passing the  LocalCacheLoader, LocalCacheURLLoader, LocalCacheNetStream.
-    3. Using the factory to create instances for thous classes. 
+The main difference is that the initialization process that requires 3 Lines of code.<br>
+    1. the fist is spesfied the application the main cache directory.<br>
+    2. is passing the  LocalCacheLoader, LocalCacheURLLoader, LocalCacheNetStream.<br>
+    3. Using the factory to create instances for thous classes. <br>
 
     Help is needed!
     
