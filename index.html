@@ -10,7 +10,7 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <title>Localcacheloader by shvilam</title>
+    <title>LocalCacheLoader by shvilam</title>
   </head>
 
   <body>
@@ -18,7 +18,7 @@
       <div class="inner">
 
         <header>
-          <h1>Localcacheloader</h1>
+          <h1>LocalCacheLoader</h1>
           <h2>Adobe Air Local Cache Loader that will save on the file system and then retrive it from there </h2>
         </header>
 
@@ -31,56 +31,57 @@
         <hr>
 
         <section id="main_content">
-          <p>LocalCacheLoader is library fully compatible with Loader / URLLoader/ NetStream and it try to replace a very light weight version of the brower cashe.</p>
+          <p>It is <strong>Adobe Air</strong> library written in <strong>AS3</strong> for caching content
+(swf,images,data file) to the local file system.</p>
 
-<p>By using this class , the data of images text  and video will be fetch from server once
-locally , and then when every it will be request again we will recheck the local file system first and local file will be use. </p>
+<p>The library is fully compatible with <strong>Loader / URLLoader/ NetStream</strong> and it try to replace a very light weight version of the browser cache.</p>
 
-<p>As a result , you can eliminate unnecessary communication to the server by requesting the same file over and over agin.
-The usage is exactly the same as Loader / URLLoader /NetStream.</p>
+<p>By using this class , the data of images text  and video will be fetch from server once and save locally , and then every time you will be request again we will check the local file system first and if the local file exists it will be use. </p>
 
-<p>The main difference is that the initialization process that requires 2 Lines of code.
-1. the fist is spesfied the application the main cache directory.
-2. is passing the  LocalCacheLoader, LocalCacheURLLoader, LocalCacheNetStream.
-3. Using the factory to create instances for thous classes. </p>
+<p>As a result , you can eliminate unnecessary communication to the server by requesting the same file over and over again.</p>
 
-<pre><code>Help is needed!
+<p>The usage is exactly the same as Loader / URLLoader /NetStream.
+The main difference is that the initialization process that requires 3 Lines of code.</p>
 
-Help is needed for the NetStream loader it doesnt have the optimal soltion it first save the file to local disc 
-and then play. it will be perfect if it could baffer the stream and in end create file out of it.
+<pre><code>    1. the fist is specified the application the main cache directory.&lt;br&gt;
+    2. is passing the  LocalCacheLoader, LocalCacheURLLoader, LocalCacheNetStream.
+    3. Using the factory to create instances for those classes. &lt;br&gt;
 </code></pre>
 
 <p>p.s 
-Tt is obligatory to use a Factory class to generate the local loader classes.</p>
+It is not obligatory to use a Factory class to generate the local loader classes.    </p>
 
-<h1>
-<a name="-how-to-use" class="anchor" href="#-how-to-use"><span class="octicon octicon-link"></span></a># How to use</h1>
+<h2>
+<a name="help-is-needed" class="anchor" href="#help-is-needed"><span class="octicon octicon-link"></span></a>Help is needed!</h2>
 
-<p>Lest look at an example even that it is quite easy to understand. File is in  sample/main.as
-It is used first initialize something like the following .
-For us to save on local without permission is after .</p>
+<pre><code>    Help is needed for the NetStream loader it doesn't have the optimal solution it first save the
+    file to local disc and then play.
+    it will be perfect if it could buffer the stream and in end create file out of it.
+</code></pre>
 
-<p>So keep that uniquely file based on the URL, unless it is the same URL completely
-I may not file will be overwritten .</p>
+<h2>
+<a name="code-example" class="anchor" href="#code-example"><span class="octicon octicon-link"></span></a>Code Example</h2>
 
-<pre><code>// Setup cache Directory.
-// Can be cached in the directory that you specify here .
-LocalCacheSettings.WORKING_DIRECTORY = File.applicationDirectory;
+<p>Let's look at an example even that it is quite easy to understand. File is in  <strong>sample/main.as</strong></p>
 
-// Please set the following: If AIR for Android, the AIR for iOS.
-// LocalCacheSettings.WORKING_DIRECTORY = File.applicationStorageDirectory;
+<pre><code>    // Setup cache Directory.
+    // Can be cached in the directory that you specify here .
+    LocalCacheSettings.WORKING_DIRECTORY = File.applicationDirectory;
 
-// Init Factory Class.
-// Loader like normal will be used if you do not initialize the factory class .
-NetClassFactory.initialize (LocalCacheLoader, LocalCacheURLLoader, LocalCacheNetStream);
+    // Please set the following: If AIR for Android, the AIR for iOS.
+    // LocalCacheSettings.WORKING_DIRECTORY = File.applicationStorageDirectory;
 
-// Create Class.
-// If true the second argument here , regardless of there without a cache that is stored in the local
-// I will take the file from the Web always on .
-_loader = NetClassFactory.createLoader (null, false);
-/ / I use normally after .
-_loader.contentLoaderInfo.addEventListener (Event.COMPLETE, _onComplete);
-_loader.load (new URLRequest ("https://www.google.co.jp/images/srpr/logo11w.png"));
+    // Init Factory Class.
+    // Loader like normal will be used if you do not initialize the factory class .
+    NetClassFactory.initialize (LocalCacheLoader, LocalCacheURLLoader, LocalCacheNetStream);
+
+    // Create Class.
+    // If true the second argument here , regardless of there without a cache that is stored in the local
+    // I will take the file from the Web always on .
+    _loader = NetClassFactory.createLoader (null, false);
+    / / I use normally after .
+    _loader.contentLoaderInfo.addEventListener (Event.COMPLETE, _onComplete);
+    _loader.load (new URLRequest ("https://www.google.co.jp/images/srpr/logo11w.png"));
 </code></pre>
 
 <p>Fork from <a href="https://github.com/sgmnt/LocalCacheLoader">https://github.com/sgmnt/LocalCacheLoader</a>
@@ -88,7 +89,7 @@ It has been fork mailly for translation resone (from japanis)</p>
         </section>
 
         <footer>
-          Localcacheloader is maintained by <a href="https://github.com/shvilam">shvilam</a><br>
+          LocalCacheLoader is maintained by <a href="https://github.com/shvilam">shvilam</a><br>
           This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
         </footer>
 
