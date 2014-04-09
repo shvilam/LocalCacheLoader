@@ -34,13 +34,13 @@
           <p>It is <strong>Adobe Air</strong> library written in <strong>AS3</strong> for caching content
 (swf,images,data file) to the local file system.</p>
 
-<p>The library is fully compatible with <strong>Loader / URLLoader/ NetStream</strong> and it try to replace a very light weight version of the browser cache.</p>
+<p>The library is fully compatible with <strong>Loader / URLLoader/ NetStream</strong> and it try to be a very light weight version of the browser cache.</p>
 
-<p>By using this class , the data of images text  and video will be fetch from server once and save locally , and then every time you will be request again we will check the local file system first and if the local file exists it will be use. </p>
+<p>By using this class , the content (images/text and video) will be fetch from server once and save locally, Then every time that url will request again the libart first check the file system to see if that file exsist on the file system and if so the libary will server the exsisting one. </p>
 
-<p>As a result , you can eliminate unnecessary communication to the server by requesting the same file over and over again.</p>
+<p>As a result, you can eliminate unnecessary communication to the server by requesting the same file over and over again.</p>
 
-<p>The usage is exactly the same as Loader / URLLoader /NetStream.
+<p>The usage is exactly the same as <strong>Loader / URLLoader / NetStream.</strong>
 The main difference is that the initialization process that requires 3 Lines of code.</p>
 
 <pre><code>    1. the fist is specified the application the main cache directory.&lt;br&gt;
@@ -54,37 +54,41 @@ It is not obligatory to use a Factory class to generate the local loader classes
 <h2>
 <a name="help-is-needed" class="anchor" href="#help-is-needed"><span class="octicon octicon-link"></span></a>Help is needed!</h2>
 
-<pre><code>    Help is needed for the NetStream loader it doesn't have the optimal solution it first save the
-    file to local disc and then play.
-    it will be perfect if it could buffer the stream and in end create file out of it.
-</code></pre>
+<p><em>Help is needed for the NetStream loader it doesn't have the optimal solution it first save the file to local disc and then play.
+t will be perfect if it could buffer the stream and in end create file out of it.</em>     </p>
 
 <h2>
 <a name="code-example" class="anchor" href="#code-example"><span class="octicon octicon-link"></span></a>Code Example</h2>
 
 <p>Let's look at an example even that it is quite easy to understand. File is in  <strong>sample/main.as</strong></p>
 
-<pre><code>    // Setup cache Directory.
-    // Can be cached in the directory that you specify here .
-    LocalCacheSettings.WORKING_DIRECTORY = File.applicationDirectory;
+<pre><code>// Setup cache Directory.
+// Can be cached in the directory that you specify here .
+LocalCacheSettings.WORKING_DIRECTORY = File.applicationDirectory;
 
-    // Please set the following: If AIR for Android, the AIR for iOS.
-    // LocalCacheSettings.WORKING_DIRECTORY = File.applicationStorageDirectory;
+// Please set the following: If AIR for Android, the AIR for iOS.
+// LocalCacheSettings.WORKING_DIRECTORY = File.applicationStorageDirectory;
 
-    // Init Factory Class.
-    // Loader like normal will be used if you do not initialize the factory class .
-    NetClassFactory.initialize (LocalCacheLoader, LocalCacheURLLoader, LocalCacheNetStream);
+// Init Factory Class.
+// Loader like normal will be used if you do not initialize the factory class .
+NetClassFactory.initialize (LocalCacheLoader, LocalCacheURLLoader, LocalCacheNetStream);
 
-    // Create Class.
-    // If true the second argument here , regardless of there without a cache that is stored in the local
-    // I will take the file from the Web always on .
-    _loader = NetClassFactory.createLoader (null, false);
-    / / I use normally after .
-    _loader.contentLoaderInfo.addEventListener (Event.COMPLETE, _onComplete);
-    _loader.load (new URLRequest ("https://www.google.co.jp/images/srpr/logo11w.png"));
+/ Create Class.
+// If true the second argument here , regardless of there without a cache that is stored in the local
+// I will take the file from the Web always on .
+_loader = NetClassFactory.createLoader (null, false);
+ // I use normally after .
+ _loader.contentLoaderInfo.addEventListener (Event.COMPLETE, _onComplete);
+_loader.load (new URLRequest ("https://www.google.co.jp/images/srpr/logo11w.png"));
 </code></pre>
 
-<p>Fork from <a href="https://github.com/sgmnt/LocalCacheLoader">https://github.com/sgmnt/LocalCacheLoader</a>
+<h2>
+<a name="next-version" class="anchor" href="#next-version"><span class="octicon octicon-link"></span></a><strong>Next version</strong>
+</h2>
+
+<ul>
+<li>Create a manger that will handel the the amout of space that is been used for cacheing </li>
+</ul><p>Fork from <a href="https://github.com/sgmnt/LocalCacheLoader">https://github.com/sgmnt/LocalCacheLoader</a>
 It has been fork mailly for translation resone (from japanis)</p>
         </section>
 
