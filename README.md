@@ -1,14 +1,14 @@
 It is **Adobe Air** library written in **AS3** for caching content
 (swf,images,data file) to the local file system.
     
-The library is fully compatible with **Loader / URLLoader/ NetStream** and it try to replace a very light weight version of the browser cache.
+The library is fully compatible with **Loader / URLLoader/ NetStream** and it try to be a very light weight version of the browser cache.
      
-By using this class , the data of images text  and video will be fetch from server once and save locally , and then every time you will be request again we will check the local file system first and if the local file exists it will be use. 
+By using this class , the content (images/text and video) will be fetch from server once and save locally, Then every time that url will request again the libart first check the file system to see if that file exsist on the file system and if so the libary will server the exsisting one. 
      
      
-As a result , you can eliminate unnecessary communication to the server by requesting the same file over and over again.
+As a result, you can eliminate unnecessary communication to the server by requesting the same file over and over again.
     
-The usage is exactly the same as Loader / URLLoader /NetStream.
+The usage is exactly the same as **Loader / URLLoader / NetStream.**
 The main difference is that the initialization process that requires 3 Lines of code.
 
         1. the fist is specified the application the main cache directory.<br>
@@ -49,7 +49,12 @@ Let's look at an example even that it is quite easy to understand. File is in  *
      _loader.contentLoaderInfo.addEventListener (Event.COMPLETE, _onComplete);
 	_loader.load (new URLRequest ("https://www.google.co.jp/images/srpr/logo11w.png"));
      
-     
+
+## **Next version**
+- Create a manger that will handel the the amout of space that is been used for cacheing 
+
+
+
 Fork from https://github.com/sgmnt/LocalCacheLoader
 It has been fork mailly for translation resone (from japanis)
 
