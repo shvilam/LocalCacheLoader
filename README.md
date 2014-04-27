@@ -45,7 +45,7 @@ Let's look at an example even that it is quite easy to understand. File is in  *
   
 Help is needed!
 ---------------
-_Help is needed for the NetStream loader it doesn't have the optimal solution it first save the file to local disc and then play.
+_For the NetStream loader it doesn't have the optimal solution it first save the file to local disc and then play.
 t will be perfect if it could buffer the stream and in end create file out of it._   
 
 ## **Next version**
