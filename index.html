@@ -3,59 +3,50 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
     <title>LocalCacheLoader by shvilam</title>
   </head>
 
   <body>
-    <div id="container">
+    <header>
       <div class="inner">
+        <h1>LocalCacheLoader</h1>
+        <h2>Adobe Air Local Cache Loader that will save on the file system and then retrive it from there </h2>
+        <a href="https://github.com/shvilam/LocalCacheLoader" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
 
-        <header>
-          <h1>LocalCacheLoader</h1>
-          <h2>Adobe Air Local Cache Loader that will save on the file system and then retrive it from there </h2>
-        </header>
-
-        <section id="downloads" class="clearfix">
-          <a href="https://github.com/shvilam/LocalCacheLoader/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
-          <a href="https://github.com/shvilam/LocalCacheLoader/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
-          <a href="https://github.com/shvilam/LocalCacheLoader" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
-
-        <hr>
-
-        <section id="main_content">
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
           <p>It is <strong>Adobe Air</strong> library written in <strong>AS3</strong> for caching content
 (swf,images,data file) to the local file system.</p>
 
 <p>The library is fully compatible with <strong>Loader / URLLoader/ NetStream</strong> and it try to be a very light weight version of the browser cache.</p>
 
-<p>By using this class , the content (images/text and video) will be fetch from server once and save locally, Then every time that url will request again the libart first check the file system to see if that file exsist on the file system and if so the libary will server the exsisting one. </p>
+<p>By using this class , the content (images/text and video) will be fetch from server once and save locally, Then every time that url will request again the library first check the file system to see if that file exsist on the file system and if so the libary will serve the local file. </p>
 
-<p>As a result, you can eliminate unnecessary communication to the server by requesting the same file over and over again.</p>
+<p>As a result, it can reduce to the minmun communication with the server by requesting the same file over and over again.</p>
 
 <p>The usage is exactly the same as <strong>Loader / URLLoader / NetStream.</strong>
-The main difference is that the initialization process that requires 3 Lines of code.</p>
+it's only requires 3 Lines of code.</p>
 
-<pre><code>    1. the fist is specified the application the main cache directory.&lt;br&gt;
-    2. is passing the  LocalCacheLoader, LocalCacheURLLoader, LocalCacheNetStream.
+<pre><code>    1. Specifying the application main cache directory.&lt;br&gt;
+    2. Passing the  LocalCacheLoader, LocalCacheURLLoader, LocalCacheNetStream.
     3. Using the factory to create instances for those classes. &lt;br&gt;
 </code></pre>
 
 <p>p.s 
-It is not obligatory to use a Factory class to generate the local loader classes.    </p>
-
-<h2>
-<a name="help-is-needed" class="anchor" href="#help-is-needed"><span class="octicon octicon-link"></span></a>Help is needed!</h2>
-
-<p><em>Help is needed for the NetStream loader it doesn't have the optimal solution it first save the file to local disc and then play.
-t will be perfect if it could buffer the stream and in end create file out of it.</em>     </p>
+It is not obligatory to use a Factory class to generate the local loader classes.      </p>
 
 <h2>
 <a name="code-example" class="anchor" href="#code-example"><span class="octicon octicon-link"></span></a>Code Example</h2>
@@ -83,6 +74,12 @@ _loader.load (new URLRequest ("https://www.google.co.jp/images/srpr/logo11w.png"
 </code></pre>
 
 <h2>
+<a name="help-is-needed" class="anchor" href="#help-is-needed"><span class="octicon octicon-link"></span></a>Help is needed!</h2>
+
+<p><em>For the NetStream loader it doesn't have the optimal solution it first save the file to local disc and then play.
+t will be perfect if it could buffer the stream and in end create file out of it.</em>   </p>
+
+<h2>
 <a name="next-version" class="anchor" href="#next-version"><span class="octicon octicon-link"></span></a><strong>Next version</strong>
 </h2>
 
@@ -92,12 +89,24 @@ _loader.load (new URLRequest ("https://www.google.co.jp/images/srpr/logo11w.png"
 It has been fork mailly for translation resone (from japanis)</p>
         </section>
 
-        <footer>
-          LocalCacheLoader is maintained by <a href="https://github.com/shvilam">shvilam</a><br>
-          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
-        </footer>
+        <aside id="sidebar">
+          <a href="https://github.com/shvilam/LocalCacheLoader/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/shvilam/LocalCacheLoader/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
 
-                  <script type="text/javascript">
+          <p class="repo-owner"><a href="https://github.com/shvilam/LocalCacheLoader"></a> is maintained by <a href="https://github.com/shvilam">shvilam</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+            <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
@@ -108,7 +117,5 @@ It has been fork mailly for translation resone (from japanis)</p>
             } catch(err) {}
           </script>
 
-      </div>
-    </div>
   </body>
 </html>
