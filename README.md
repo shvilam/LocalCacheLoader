@@ -1,46 +1,58 @@
-Fork from https://github.com/sgmnt/LocalCacheLoader
+It is **Adobe Air** library written in **AS3** for caching content
+(swf,images,data file) to the local file system.
+    
+The library is fully compatible with **Loader / URLLoader/ NetStream** and it try to be a very light weight version of the browser cache.
+     
+By using this class , the content (images/text and video) will be fetch from server once and save locally, Then every time that url will request again the library first check the file system to see if that file exsist on the file system and if so the libary will serve the local file. 
+     
+     
+As a result, it can reduce to the minmun communication with the server by requesting the same file over and over again.
+    
+The usage is exactly the same as **Loader / URLLoader / NetStream.**
+it's only requires 3 Lines of code.
 
-Main resone for forking is translate to english 
+        1. Specifying the application main cache directory.<br>
+        2. Passing the  LocalCacheLoader, LocalCacheURLLoader, LocalCacheNetStream.
+        3. Using the factory to create instances for those classes. <br>
+     
+p.s 
+It is not obligatory to use a Factory class to generate the local loader classes.      
+     
+## Code Example
+Let's look at an example even that it is quite easy to understand. File is in  **sample/main.as**
 
-LocalCacheLoader of fully compatible with Loader / URLLoader.
-
-
-By using this class , the data of the image or text that is read
-Save once locally , if a file of the same already exists
-I will use that file .
-
-As a result , you can eliminate unnecessary communication of the same file .
-The usage is exactly the same as Loader / URLLoader normal .
-
-Point of difference is that the initialization process requires some prior to use .
-It is that it is necessary to use a Factory class dedicated to the generation of class .
-
-It is also available on AIR for Android / AIR for iOS.
-
-# # How to use
-
-While it is easy to understand it 's get a look at the sample / main.as
-It is used first initialize something like the following .
-For us to save on local without permission is after .
-
-So keep that uniquely file based on the URL, unless it is the same URL completely
-I may not file will be overwritten .
-
-    // Setup cache Directory.
+     
+	// Setup cache Directory.
     // Can be cached in the directory that you specify here .
     LocalCacheSettings.WORKING_DIRECTORY = File.applicationDirectory;
-    
+        
     // Please set the following: If AIR for Android, the AIR for iOS.
     // LocalCacheSettings.WORKING_DIRECTORY = File.applicationStorageDirectory;
-
+     
     // Init Factory Class.
     // Loader like normal will be used if you do not initialize the factory class .
     NetClassFactory.initialize (LocalCacheLoader, LocalCacheURLLoader, LocalCacheNetStream);
-
-    // Create Class.
+     
+    / Create Class.
     // If true the second argument here , regardless of there without a cache that is stored in the local
     // I will take the file from the Web always on .
     _loader = NetClassFactory.createLoader (null, false);
-    / / I use normally after .
-    _loader.contentLoaderInfo.addEventListener (Event.COMPLETE, _onComplete);
-    _loader.load (new URLRequest ("https://www.google.co.jp/images/srpr/logo11w.png"));
+     // I use normally after .
+     _loader.contentLoaderInfo.addEventListener (Event.COMPLETE, _onComplete);
+	_loader.load (new URLRequest ("https://www.google.co.jp/images/srpr/logo11w.png"));
+     
+
+  
+Help is needed!
+---------------
+_For the NetStream loader it doesn't have the optimal solution it first save the file to local disc and then play.
+t will be perfect if it could buffer the stream and in end create file out of it._   
+
+## **Next version**
+- Create a manger that will handel the the amout of space that is been used for cacheing 
+
+
+Fork from https://github.com/sgmnt/LocalCacheLoader
+It has been fork mailly for translation resone (from japanis)
+
+ 
